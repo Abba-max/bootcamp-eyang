@@ -9,9 +9,9 @@ urlpatterns = [
     path("add/", AddCertificationView.as_view(), name="add_certification"),
     path("add-related/<str:model_name>/", AddRelatedView.as_view(), name="add_related"),
     path("certification/<int:pk>/", CertificationDetailView.as_view(), name="certification_detail"),
-    path("login/",views.login, name= 'login'),
-    path("registration/",views.registration, name= 'registration'),
-    path("logout/",views.logout, name= 'logout')
+    path('login/',views.login, name= 'login'),
+    path('registration/',views.registration, name= 'registration'),
+    path('logout',views.logout, name= 'logout')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

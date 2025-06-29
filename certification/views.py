@@ -110,7 +110,7 @@ def registration(request):
             else:
                 user = User.objects.create_user(username=username, email=email, password=password)
                 user.save()
-                return redirect('login')
+                return redirect('/login')
         else:
             messages.info(request, 'Password not the same')
             return redirect('registration')
