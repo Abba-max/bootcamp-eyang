@@ -42,16 +42,24 @@
 } */
 
 
+
+body{
+    background-color:rgb(193, 233, 248);
+}
+
+
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: sans-sersif;
-}
+} 
 
 form{
     width: min(90%,25em);
-    background-color: rgb(67, 128, 182);
+    color:white;
+    background-color: rgb(33, 64, 235);
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
@@ -65,7 +73,7 @@ form{
 }
 .error-message{
     color: red;
-    visibility: hidden;
+    /* visibility: hidden; */
     transition: visibility 0.3s ease;
 
 }

@@ -97,13 +97,13 @@ def registration(request):
     if request.method == 'POST':
         username = request.POST['username']
         email = request.POST['email']
-        password = request.POST.get['password']
-        password1 = request.POST.get['password1']
+        password = request.POST.get('password')
+        password1 = request.POST.get('password1')
         
         if password == password1:
             if User.objects.filter(email=email).exists():
                 messages.info(request, 'Email Already Used')
-                return redirect('registratiom')
+                return redirect('registration')
             elif User.objects.filter(username=username).exists():
                 messages.info(request, 'Username Already used')
                 return redirect('registration')
@@ -128,6 +128,7 @@ def login(request):
         else:
             messages.info(request, 'Credentials not valid')
             return render(request, 'login.html')
+    return render(request, 'login.html')    
         
 def logout(request):
     auth.logout(request)

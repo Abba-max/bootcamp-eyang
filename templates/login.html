@@ -19,7 +19,7 @@
 </div> {% endcomment %}
 
 
- <form id="myform" method= 'POST', action= 'login' >
+ <form id="myform" method= 'POST', action= '{% url 'login' %}' >
     {% csrf_token %}
         <div id="error message"class="error-message">
             {% for message in messages%}
@@ -29,15 +29,16 @@
         
          <h1> Login </h1>
     <p>Get certified and add value to your profile</p><hr>
-    <h4>Username:  <input  type="text" id="inputField" placeholder="Enter Username" required> </h4>
-    <h4>Password:  <input  type="text" id="inputField" placeholder="Enter Password" required></h4>
+   <h4>Username:  <input  type="text" id="inputField" name='username' placeholder="Enter Username" required /> </h4>
+    <h4>Password:  <input  type="text" id="inputField" name ='password' placeholder="Enter Password" required></h4>
     <button onclick="validateInput()" type="submit">
         Get started
     </button>
-    <button onclick="/" type="submit">
-         Homepage
-    </button>
+ <a href='/'> <button  type="button">
+       Homepage
+    </button><a/>
+     <h5> If you don't have an account,  <a class="button" href="{% url 'registration' %}">Sign up</a></h5>
     </form>
 
 
-<script src="auth.js"></script>
+<script src="{% static 'auth.js' %}"></script>

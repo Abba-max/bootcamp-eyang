@@ -28,6 +28,13 @@ INSTALLED_APPS = [
     "tailwind",
     "theme",
     "slippers",
+    
+    #  'django.contrib.sites',  # Required for allauth
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.google',
+    
 ]
 
 TAILWIND_APP_NAME = 'theme'
@@ -92,6 +99,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# AUTHENTICATION_BACKENDS = [
+#     'django.contrib.auth.backends.ModelBackend',
+#     'allauth.account.auth_backends.AuthenticationBackend',
+# ]  # Allows allauth to handle authentication
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
@@ -117,3 +130,5 @@ MEDIA_URL = "media/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# SITE_ID = 1 # Required for allauth 
